@@ -6,8 +6,11 @@ namespace LangProcessor.Domain.Postulates
     {
         public void Teach(Knowledge knowledge)
         {
-            knowledge.Terms.Add(new Term(Value1));
-            knowledge.Terms.Add(new Term(Value2));
+            var term1 = knowledge.Terms.GetOrAdd(Value1, () => new Term(Value1));
+            term1.Synonyms.TryAdd(Value2, Value2);
+
+            var term2 = knowledge.Terms.GetOrAdd(Value2, () => new Term(Value2));
+            term2.Synonyms.TryAdd(Value1, Value1);
         }
     }
 }

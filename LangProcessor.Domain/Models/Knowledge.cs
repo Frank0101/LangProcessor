@@ -3,9 +3,9 @@ using System.Text.Json;
 
 namespace LangProcessor.Domain.Models
 {
-    public class Knowledge
+    public record Knowledge
     {
-        public HashSet<Term> Terms { get; } = new();
+        public Dictionary<string, Term> Terms { get; } = new();
 
         public override string ToString()
         {
