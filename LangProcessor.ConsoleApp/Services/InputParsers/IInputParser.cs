@@ -4,7 +4,8 @@ namespace LangProcessor.ConsoleApp.Services.InputParsers
 {
     public interface IInputParser
     {
-        public bool CanParse(string input);
-        public IPostulate Parse(string input);
+        string HelpMessage { get; }
+        bool CanParse(string input);
+        IPostulate Parse(string input);
     }
 }

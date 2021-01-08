@@ -4,10 +4,13 @@ namespace LangProcessor.ConsoleApp.Services
 {
     public class ApplicationService : IApplicationService
     {
+        private readonly IInputHelpService _inputHelpService;
         private readonly IInputService _inputService;
 
-        public ApplicationService(IInputService inputService)
+        public ApplicationService(IInputHelpService inputHelpService,
+            IInputService inputService)
         {
+            _inputHelpService = inputHelpService;
             _inputService = inputService;
         }
 
@@ -28,12 +31,20 @@ namespace LangProcessor.ConsoleApp.Services
                         quit = true;
                         break;
                     case "help":
-                        PrintHelp();
+                        HandleHelp();
                         break;
                     case { } input:
                         HandleInput(input);
                         break;
                 }
+            }
+        }
+
+        private void HandleHelp()
+        {
+            foreach (var helpMessage in _inputHelpService.GetInputHelpMessages())
+            {
+                Console.WriteLine(helpMessage);
             }
         }
 
@@ -48,11 +59,6 @@ namespace LangProcessor.ConsoleApp.Services
             {
                 Console.WriteLine(e.Message);
             }
-        }
-
-        private static void PrintHelp()
-        {
-            throw new NotImplementedException();
         }
     }
 }

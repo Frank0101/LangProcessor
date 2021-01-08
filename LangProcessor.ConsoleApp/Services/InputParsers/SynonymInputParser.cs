@@ -5,13 +5,16 @@ namespace LangProcessor.ConsoleApp.Services.InputParsers
 {
     public class SynonymInputParser : IInputParser
     {
-        public bool CanParse(string input) =>
-            Regex.IsMatch(input, @"^\w+ = \w$");
+        private readonly Regex _matchingRegex = new(@"^(\w+) = (\w+)$");
+
+        public string HelpMessage => "Synonym: A = B";
+
+        public bool CanParse(string input) => _matchingRegex.IsMatch(input);
 
         public IPostulate Parse(string input)
         {
-            var matches = Regex.Match(input, @"^{\w+} = {\w+}$");
-            return new SynonymPostulate(matches.Groups[1].Value, matches.Groups[2].Value);
+            var matchingGroups = _matchingRegex.Match(input).Groups;
+            return new SynonymPostulate(matchingGroups[1].Value, matchingGroups[2].Value);
         }
     }
 }

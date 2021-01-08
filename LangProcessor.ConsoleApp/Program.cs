@@ -17,8 +17,11 @@ namespace LangProcessor.ConsoleApp
         {
             return new ServiceCollection()
 
-                // console
+                // Input Parsers
                 .AddScoped<IInputParser, SynonymInputParser>()
+
+                // Console
+                .AddScoped<IInputHelpService, InputHelpService>()
                 .AddScoped<IInputService, InputService>()
                 .AddScoped<IApplicationService, ApplicationService>()
                 .BuildServiceProvider();

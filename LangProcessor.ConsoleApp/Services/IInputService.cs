@@ -4,6 +4,6 @@ namespace LangProcessor.ConsoleApp.Services
 {
     public interface IInputService
     {
-        public IPostulate ParseInput(string input);
+        IPostulate ParseInput(string input);
     }
 }
