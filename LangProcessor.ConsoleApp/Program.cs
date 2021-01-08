@@ -21,6 +21,7 @@ namespace LangProcessor.ConsoleApp
                 // Input Parsers
                 .AddScoped<IInputParser, ExistInputParser>()
                 .AddScoped<IInputParser, SynonymInputParser>()
+                .AddScoped<IInputParser, TypeInputParser>()
 
                 // Console Services
                 .AddScoped<IInputHelpService, InputHelpService>()
