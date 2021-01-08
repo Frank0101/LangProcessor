@@ -26,7 +26,7 @@ namespace LangProcessor.ConsoleApp.Services
             while (!quit)
             {
                 Console.Write("command> ");
-                switch (Console.ReadLine())
+                switch (Console.ReadLine()?.ToLower())
                 {
                     case "quit":
                         quit = true;

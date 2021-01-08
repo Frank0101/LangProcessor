@@ -7,7 +7,7 @@ namespace LangProcessor.ConsoleApp.InputParsers
     {
         private readonly Regex _matchingRegex = new(@"^(\w+)$");
 
-        public string HelpMessage => "Exist: A";
+        public string HelpMessage => $"Exist: {_matchingRegex}";
 
         public bool CanParse(string input) => _matchingRegex.IsMatch(input);
 
