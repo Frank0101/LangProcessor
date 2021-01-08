@@ -1,5 +1,6 @@
 ﻿using LangProcessor.ConsoleApp.InputParsers;
 using LangProcessor.ConsoleApp.Services;
+using LangProcessor.Domain.Models;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LangProcessor.ConsoleApp
@@ -10,7 +11,7 @@ namespace LangProcessor.ConsoleApp
         {
             using var serviceProvider = RegisterDependencies();
             var applicationService = serviceProvider.GetRequiredService<IApplicationService>();
-            applicationService.Start();
+            applicationService.Start(new Knowledge());
         }
 
         private static ServiceProvider RegisterDependencies()

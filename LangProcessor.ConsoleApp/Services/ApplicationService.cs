@@ -1,4 +1,5 @@
 using System;
+using LangProcessor.Domain.Models;
 
 namespace LangProcessor.ConsoleApp.Services
 {
@@ -14,7 +15,7 @@ namespace LangProcessor.ConsoleApp.Services
             _inputService = inputService;
         }
 
-        public void Start()
+        public void Start(Knowledge knowledge)
         {
             Console.WriteLine("Language Processor - F.C. 2021");
             Console.WriteLine("Type 'quit' to terminate");
@@ -34,7 +35,7 @@ namespace LangProcessor.ConsoleApp.Services
                         HandleHelp();
                         break;
                     case { } input:
-                        HandleInput(input);
+                        HandleInput(input, knowledge);
                         break;
                 }
             }
@@ -48,12 +49,15 @@ namespace LangProcessor.ConsoleApp.Services
             }
         }
 
-        private void HandleInput(string input)
+        private void HandleInput(string input, Knowledge knowledge)
         {
             try
             {
                 var postulate = _inputService.ParseInput(input);
-                Console.WriteLine(postulate);
+                postulate.Teach(knowledge);
+
+                Console.WriteLine($"Teaching {postulate}..");
+                Console.WriteLine($"Knowledge is {knowledge}");
             }
             catch (ArgumentException e)
             {
