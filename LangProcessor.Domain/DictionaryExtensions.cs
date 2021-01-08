@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace LangProcessor.Domain.Postulates
+namespace LangProcessor.Domain
 {
     public static class DictionaryExtensions
     {
