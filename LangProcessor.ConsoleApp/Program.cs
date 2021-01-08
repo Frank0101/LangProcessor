@@ -1,5 +1,5 @@
-﻿using LangProcessor.ConsoleApp.Services;
-using LangProcessor.ConsoleApp.Services.InputParsers;
+﻿using LangProcessor.ConsoleApp.InputParsers;
+using LangProcessor.ConsoleApp.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LangProcessor.ConsoleApp
@@ -20,7 +20,7 @@ namespace LangProcessor.ConsoleApp
                 // Input Parsers
                 .AddScoped<IInputParser, SynonymInputParser>()
 
-                // Console
+                // Console Services
                 .AddScoped<IInputHelpService, InputHelpService>()
                 .AddScoped<IInputService, InputService>()
                 .AddScoped<IApplicationService, ApplicationService>()

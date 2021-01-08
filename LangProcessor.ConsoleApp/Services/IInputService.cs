@@ -1,4 +1,4 @@
-using LangProcessor.Domain.Models.Postulates;
+using LangProcessor.Domain.Postulates;
 
 namespace LangProcessor.ConsoleApp.Services
 {

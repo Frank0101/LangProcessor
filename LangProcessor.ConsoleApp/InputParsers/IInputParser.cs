@@ -1,6 +1,6 @@
-using LangProcessor.Domain.Models.Postulates;
+using LangProcessor.Domain.Postulates;
 
-namespace LangProcessor.ConsoleApp.Services.InputParsers
+namespace LangProcessor.ConsoleApp.InputParsers
 {
     public interface IInputParser
     {

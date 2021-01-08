@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using LangProcessor.ConsoleApp.Services.InputParsers;
+using LangProcessor.ConsoleApp.InputParsers;
 
 namespace LangProcessor.ConsoleApp.Services
 {

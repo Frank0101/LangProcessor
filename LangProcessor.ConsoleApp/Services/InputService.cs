@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using LangProcessor.ConsoleApp.Services.InputParsers;
-using LangProcessor.Domain.Models.Postulates;
+using LangProcessor.ConsoleApp.InputParsers;
+using LangProcessor.Domain.Postulates;
 
 namespace LangProcessor.ConsoleApp.Services
 {
