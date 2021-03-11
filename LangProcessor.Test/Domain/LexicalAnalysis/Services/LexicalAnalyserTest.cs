@@ -11,7 +11,7 @@ namespace LangProcessor.Test.Domain.LexicalAnalysis.Services
         public void Analyse_ShouldApplyASimpleSpec()
         {
             // Arrange
-            var spec = new TokenSpec("token", "");
+            var spec = new TokenSpec("token", "[a-zA-Z]+");
             var sut = new LexicalAnalyser(new[] {spec});
 
             const string input = "this is a test input";

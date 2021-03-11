@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using LangProcessor.Domain.LexicalAnalysis.Models;
 
@@ -15,7 +14,7 @@ namespace LangProcessor.Domain.LexicalAnalysis.Services
 
         public IEnumerable<Token> Analyse(string input)
         {
-            throw new NotImplementedException();
+            return new Token[] { };
         }
     }
 }
