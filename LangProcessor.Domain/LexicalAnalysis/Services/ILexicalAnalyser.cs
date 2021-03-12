@@ -5,6 +5,6 @@ namespace LangProcessor.Domain.LexicalAnalysis.Services
 {
     public interface ILexicalAnalyser
     {
-        IEnumerable<Token> Analyse(string input);
+        IEnumerable<Symbol> Analyse(string input);
     }
 }

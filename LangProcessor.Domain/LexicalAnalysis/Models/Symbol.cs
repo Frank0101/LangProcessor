@@ -1,4 +1,4 @@
 namespace LangProcessor.Domain.LexicalAnalysis.Models
 {
-    public record Token(string Type, string Value);
+    public record Symbol(string Type, string Value);
 }

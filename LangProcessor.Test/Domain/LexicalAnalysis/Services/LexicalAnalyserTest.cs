@@ -8,19 +8,25 @@ namespace LangProcessor.Test.Domain.LexicalAnalysis.Services
     public class LexicalAnalyserTest
     {
         [Fact]
-        public void Analyse_ShouldApplyASimpleSpec()
+        public void Analyse_ShouldApplyASimpleRule()
         {
             // Arrange
-            var spec = new TokenSpec("token", "[a-zA-Z]+");
-            var sut = new LexicalAnalyser(new[] {spec});
+            var rule = new LexicalRule("character", "[a-zA-Z]");
+            var sut = new LexicalAnalyser(new[] {rule});
 
-            const string input = "this is a test input";
+            const string input = "test";
 
             // Act
-            var tokens = sut.Analyse(input);
+            var symbols = sut.Analyse(input);
 
             // Assert
-            tokens.Should().NotBeNull();
+            symbols.Should().Contain(new[]
+            {
+                new Symbol("character", "t"),
+                new Symbol("character", "e"),
+                new Symbol("character", "s"),
+                new Symbol("character", "t")
+            });
         }
     }
 }
