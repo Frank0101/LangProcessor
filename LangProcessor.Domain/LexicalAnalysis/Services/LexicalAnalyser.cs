@@ -28,7 +28,7 @@ namespace LangProcessor.Domain.LexicalAnalysis.Services
                         tuple.SymbolType,
                         Match: tuple.Regex.Match(input)
                     ))
-                    .Where(tuple => tuple.Match != null)
+                    .Where(tuple => tuple.Match.Success)
                     .OrderBy(tuple => tuple.Match.Index)
                     .ToArray();
 
